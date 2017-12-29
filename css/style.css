@@ -4,11 +4,11 @@
 */
 
 body, html {
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
   margin: 0;
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+  font-family: 'Futura', Arial, sans-serif;
 }
 
 /*
@@ -28,12 +28,9 @@ div#content, #content2, #content3{
   -moz-box-shadow: -3px 0 6px #4a5562;
   -webkit-box-shadow: -3px 0 6px #4a5562;
   box-shadow: -3px 0 6px #4a5562;
-  -moz-transition: all 300ms;
-  -webkit-transition: all 300ms;
-  transition: all 300ms;
 }
 div#content {
-  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3) ), url("../videos/bg1.jpg");
+  background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2) ), url("../videos/bg1.jpg");
   background-size: 100% 100%;
 }
 div#content2 {
@@ -44,11 +41,30 @@ div#content3 {
   background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3) ), url("../videos/bg3.jpg");
   background-size: 100% 100%;
 }
+/** Intro animation **/
+@-webkit-keyframes typing { from { width: 0; } }
+@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+
+.intro {
+	font: bold 300% Helvetica, Arial, sans-serif;
+	border-right: .1em solid yellow;
+	width: 16.5em;
+	width: 25ch;
+	margin: 2em 1em;
+	white-space: nowrap;
+	overflow: hidden;
+	-webkit-animation: typing 4s steps(44, end),
+	blink-caret .2s step-end infinite alternate;
+}
+
 div#center {
+  color: #a3cbff;
+  text-transform: uppercase;
+  font-size: 24px;
   position: relative;
   top: 300px;
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 1150px;
 }
 
 /** Navigation **/
@@ -64,8 +80,8 @@ li {
 }
 li a {
   text-decoration: none;
-  color: black;
-  font: 23px/1 Helvetica, Verdana, sans-serif;
+  color: #a3cbff;
+  font: 23px/1 'Futura', Arial, sans-serif;
   text-transform: uppercase;
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
@@ -75,7 +91,7 @@ li a {
 }
 
 li a:hover {
-  color: white;
+  color: yellow;
 }
 
 /** Home Button **/
@@ -86,20 +102,4 @@ img#logo {
   width: 65px;
   height: 65px;
   border-radius: 50%;
-}
-
-/** Intro animation **/
-@-webkit-keyframes typing { from { width: 0; } }
-@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
-
-.intro {
-	font: bold 300% Consolas, Monaco, monospace;
-	border-right: .1em solid black;
-	width: 16.5em;
-	width: 24ch;
-	margin: 2em 1em;
-	white-space: nowrap;
-	overflow: hidden;
-	-webkit-animation: typing 4s steps(44, end),
-	blink-caret .2s step-end infinite alternate;
 }
