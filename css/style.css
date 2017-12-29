@@ -1,0 +1,105 @@
+
+/*
+  Globals
+*/
+
+body, html {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/*
+  Content
+*/
+div#content, #content2, #content3{
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 60px;
+  background: #fcfeff;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-shadow: -3px 0 6px #4a5562;
+  -webkit-box-shadow: -3px 0 6px #4a5562;
+  box-shadow: -3px 0 6px #4a5562;
+  -moz-transition: all 300ms;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+div#content {
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3) ), url("../videos/bg1.jpg");
+  background-size: 100% 100%;
+}
+div#content2 {
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3) ), url("../videos/bg2.jpg");
+  background-size: 100% 100%;
+}
+div#content3 {
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3) ), url("../videos/bg3.jpg");
+  background-size: 100% 100%;
+}
+div#center {
+  position: relative;
+  top: 300px;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+/** Navigation **/
+
+ul {
+  overflow: none;
+  list-style-type: none;
+}
+li {
+  height: 5px;
+  float: right;
+  padding: 0 9px;
+}
+li a {
+  text-decoration: none;
+  color: black;
+  font: 23px/1 Helvetica, Verdana, sans-serif;
+  text-transform: uppercase;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+li a:hover {
+  color: white;
+}
+
+/** Home Button **/
+img#logo {
+  position: absolute;
+  top: 50px;
+  left: 70px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
+
+/** Intro animation **/
+@-webkit-keyframes typing { from { width: 0; } }
+@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+
+.intro {
+	font: bold 300% Consolas, Monaco, monospace;
+	border-right: .1em solid black;
+	width: 16.5em;
+	width: 24ch;
+	margin: 2em 1em;
+	white-space: nowrap;
+	overflow: hidden;
+	-webkit-animation: typing 4s steps(44, end),
+	blink-caret .2s step-end infinite alternate;
+}
