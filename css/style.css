@@ -30,11 +30,11 @@ div#content, #content2, #content3{
   box-shadow: -3px 0 6px #4a5562;
 }
 div#content {
-  background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2) ), url("../videos/bg1.jpg");
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), url("../videos/bg1.jpg");
   background-size: 100% 100%;
 }
 div#content2 {
-  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3) ), url("../videos/bg2.jpg");
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../videos/bg2.jpg");
   background-size: 100% 100%;
 }
 div#content3 {
@@ -48,7 +48,6 @@ div#content3 {
 .intro {
 	font: bold 300% Helvetica, Arial, sans-serif;
 	border-right: .1em solid yellow;
-	width: 16.5em;
 	width: 25ch;
 	margin: 2em 1em;
 	white-space: nowrap;
@@ -67,6 +66,52 @@ div#center {
   max-width: 1150px;
 }
 
+/** About Page **/
+.link {
+  color: yellow;
+}
+div#portraitdiv {
+  position: relative;
+  top: 15.5em;
+  left: 3em;
+  width: 300px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+img#portrait {
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+div#about {
+  position: relative;
+  margin: 0 auto;
+  bottom: 6em;
+  max-width: 500px;
+  right: 440px;
+  color: #a3cbff;
+  font-size: 19px;
+}
+div#about h1 {
+  color: yellow;
+}
+div#details {
+  position: relative;
+  bottom: 28em;
+  margin: 0 auto;
+  max-width: 200px;
+  left: 21em;
+  color: #a3cbff;
+  font-size: 19px;
+}
+div#details h1 {
+  color: yellow;
+}
+div#details h2 {
+  color: #4d9aff;
+}
 /** Navigation **/
 
 ul {
