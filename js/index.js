@@ -1,14 +1,34 @@
 /*
-  Slidemenu
+  Preloader animation
 */
-(function() {
-	var $body = document.body
-	, $menu_trigger = $body.getElementsByClassName('menu-trigger')[0];
+document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'interactive') {
+       document.getElementById('contents').style.visibility="hidden";
+  } else if (state == 'complete') {
+      setTimeout(function(){
+         document.getElementById('interactive');
+         document.getElementById('preloader').style.visibility="hidden";
+         document.getElementById('content').style.visibility="visible";
+      },1000);
+  }
+}
 
-	if ( typeof $menu_trigger !== 'undefined' ) {
-		$menu_trigger.addEventListener('click', function() {
-			$body.className = ( $body.className == 'menu-active' )? '' : 'menu-active';
-		});
-	}
+/*
+  Typewriter animation
+*/
+var typeWriter = function typeWriter(selector) {
+  var el = document.querySelector(selector);
+  var text = el.innerHTML;(function _type() {
+    var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
 
-}).call(this);
+    if (i === text.length) return;
+
+    el.innerHTML = text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+    setTimeout(function () {
+      return _type(i + 1);
+    }, 100);
+  })();
+};
+
+typeWriter(".js-type-writer");
