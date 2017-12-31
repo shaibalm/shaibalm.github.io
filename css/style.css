@@ -1,7 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 html,
-body {
+body, h1, h2, p, img {
   overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 .background {
@@ -354,7 +357,7 @@ img#portrait {
   color: yellow;
   float: right;
   padding-right: 2em;
-  padding-top: 1em;
+  padding-top: 0.8em;
   text-transform: none;
 }
 img#mailLogo {
