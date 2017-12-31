@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" >
+
 <head>
   <meta charset="UTF-8">
   <meta name="author" content="Shaibal Muhtadee">
@@ -7,92 +8,115 @@
   <meta name="description" content="Student, Programmer &#38; Designer from Toronto">
   <meta name="keywords" content="Student, Programmer, Designer, Porftfolio">
 
-  <!-- mobile setting -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>mshaibal</title>
 
-  <title>mshaibal - home</title>
-
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Favicon -->
   <link rel="shortcut icon" type="image/png" href="videos/favicon.png">
 
-
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-<!-- Loading Animation -->
-<div id="preloader">
-  <div class="spinner">
-    <div class="spinner-inner">
-    </div>
-  </div>
-</div>
-<!-- Content -->
-<div id="content">
-  <!-- Navigation Bar -->
-  <a href="index.html"><img id="logo" src="videos/button.jpg"/></a>
-  <div id="navbar">
-    <nav>
-      <ul>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-    </nav>
-  </div>
-  <h1 class="js-type-writer">Hi, I&#39;m Shaibal Muhtadee.</h1>
-</div>
-
-<div id="content2">
-  <!-- Navigation Bar -->
-  <a href="index.html"><img id="logo" src="videos/button.jpg"/></a>
-  <div id="navbar">
-    <nav>
-      <ul>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="center">
-    <img id="portrait" src="videos/dp.jpeg"/>
-    <div id="one">
-      <h1>About Me</h1>
-      <div id="oneInfo">
-        <p>I’m student and aspiring programmer from Toronto who loves music, sports
-          and life itself. I love learning new things. Anything I don’t yet
-          understand is a challenge to tackle in the future.</br></br>I'm currently a
-          senior at Victoria Park Collegiate Institute and hope to study electrical
-          engineering in universtiy.</br></br>I love playing sports, notably volleyball,
-          soccer, and ultimate frisbee. I took up web design as a hobby and my
-          current project is this website. Most of the code I write is open sourced
-          and is available on <a href="https://github.com/shaibalm"><span id="link">GitHub</span></a>.</p>
-      </div>
-    </div>
-    <div id="two">
-      <h1>Details</h1>
-      <div id="twoInfo">
-        <img src="videos/info.png"/>
+  <!-- Loading Animation -->
+  <div id="preloader">
+    <div class="spinner">
+      <div class="spinner-inner">
       </div>
     </div>
   </div>
-  </div>
+
+  <div class="container">
+
+  <section id="one" class="background">
+    <div class="content-wrapper">
+      <!-- Navigation Bar -->
+      <img onclick="goto(0);" id="logo" src="videos/button.jpg"/>
+      <div id="navbar">
+        <nav>
+          <ul>
+            <li><a onclick="goto(3);">Work</a></li>
+            <li><a onclick="goto(2);">Portfolio</a></li>
+            <li><a onclick="goto(1);">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      <h1 class="intro typewriter">Hi, I&#39;m Shaibal Muhtadee.</h1>
+    </div>
+  </section>
+  <section class="background">
+    <div class="content-wrapper">
+      <!-- Navigation Bar -->
+      <img onclick="goto(0);" id="logo" src="videos/button.jpg"/>
+      <div id="navbar">
+        <nav>
+          <ul>
+            <li><a onclick="goto(3);">Work</a></li>
+            <li><a onclick="goto(2);">Portfolio</a></li>
+            <li><a onclick="goto(1);">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="info">
+        <img id="portrait" src="videos/dp.jpeg"/>
+      </div>
+    </div>
+  </section>
+  <section class="background">
+    <div class="content-wrapper">
+      <!-- Navigation Bar -->
+      <img onclick="goto(0);" id="logo" src="videos/button.jpg"/>
+      <div id="navbar">
+        <nav>
+          <ul>
+            <li><a onclick="goto(3);">Work</a></li>
+            <li><a onclick="goto(2);">Portfolio</a></li>
+            <li><a onclick="goto(1);">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <section class="background">
+    <div class="content-wrapper">
+      <!-- Navigation Bar -->
+      <img onclick="goto(0);" id="logo" src="videos/button.jpg"/>
+      <div id="navbar">
+        <nav>
+          <ul>
+            <li><a onclick="goto(3);">Work</a></li>
+            <li><a onclick="goto(2);">Portfolio</a></li>
+            <li><a onclick="goto(1);">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Footer -->
+      <div class="footer">
+        <div id="button"></div>
+        <div id="container">
+          <div id="cont">
+            <div class="footer_center">
+    	         <h1>Contact</h1>
+               <p>&copy; 2018 Shaibal Muhtadee</p>
+               <img id="mailLogo" src="videos/gmailIcon.png"/>
+               <p id="email">shaibalmuhtadee@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
 </div>
-<div id="content3">
-  <!-- Navigation Bar -->
-  <a href="index.html"><img id="logo" src="videos/button.jpg"/></a>
-  <div id="navbar">
-    <nav>
-      <ul>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
 
-<script src="js/index.js"></script>
+<!-- scripts -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js'></script>
+<script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.js'></script>
+<script  src="js/index.js"></script>
+
 </body>
+
 </html>
