@@ -165,6 +165,6 @@ document.onreadystatechange = function () {
          document.getElementById('interactive');
          document.getElementById('preloader').style.visibility="hidden";
          document.getElementById('container').style.visibility="visible";
-      },1000);
+      },500);
   }
 }
