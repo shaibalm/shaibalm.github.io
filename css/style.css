@@ -273,9 +273,8 @@ img#logo {
 
 /* About Page */
 img#portrait {
-  border-radius: 50%;
-  height: 400px;
-  width: 400px;
+  height: 425px;
+  width: 425px;
 }
 /* Footer */
 .footer #button{
