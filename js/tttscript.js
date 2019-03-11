@@ -16,6 +16,7 @@ const winningCombos = [
 startGame(currentGameBoard, winningCombos)
 
 function startGame(gameBoard, winningCombos) {
+	document.getElementById("endGameDisplay").innerHTML = "Good Luck!";
 	currentGameBoard = Array.from(Array(9), (x, index) => index);
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].innerText = '';
@@ -71,10 +72,17 @@ function endGame(gameBoard, winningCombos) {
 }
 
 function win(gameBoard, winningCombos) {
-	var counter = 0;
-	for (var i = 0; i < gameBoard.length; i++) {
+	for (var i = 0; i < winningCombos.length; i++) {
+		for (var j = 0; j < winningCombos[i].length; j++) {
+			var x = winningCombos[i][j];
+			var y = winningCombos[i][j+1];
+			var z = winningCombos[i][j+2];
+			if (gameBoard[x] == player && gameBoard[y] == player && gameBoard[z] == player) {
+				return true;
+			}
 
-	}	
+		}
+	}
 }
 
 function tie(gameBoard) {
