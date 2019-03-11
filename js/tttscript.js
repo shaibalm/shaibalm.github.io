@@ -46,10 +46,10 @@ function computerLogic(squareId) {
 	if (canWin()[0]) {
 		computerMove(canWin()[1])
 	}
-	/**
-	else if (canBlock(squareId)) {
-		computerMove(square)
+	else if (canBlock()[0]) {
+		computerMove(canBlock()[1])
 	}
+	/**
 	else if (canFork(squareId)) {
 		computerMove(square)
 	}
@@ -69,6 +69,32 @@ function computerLogic(squareId) {
 	else {
 		computerMove(4)
 	}
+}
+
+function canBlock() {
+	for (var i = 0; i < winningCombos.length; i++) {
+		for (var j = 0; j < winningCombos[i].length; j++) {
+			var x = winningCombos[i][j];
+			var y = winningCombos[i][j+1];
+			var z = winningCombos[i][j+2];
+			if (currentGameBoard[x] == player && currentGameBoard[y] == player) {
+				if (!isFilled(currentGameBoard[z])) {
+					return [true, currentGameBoard[z]];
+				}
+			}
+			else if (currentGameBoard[x] == player && currentGameBoard[z] == player) {
+				if (!isFilled(currentGameBoard[y])) {
+					return [true, currentGameBoard[y]];
+				}				
+			}
+			else if (currentGameBoard[y] == player && currentGameBoard[z] == player) {
+				if (!isFilled(currentGameBoard[x])) {
+					return [true, currentGameBoard[x]];
+				}				
+			}			
+		}
+	}
+	return false;	
 }
 
 function canWin() {
