@@ -23,23 +23,82 @@ function startGame(gameBoard, winningCombos) {
 		cells[i].style.removeProperty('background-color');
 		cells[i].addEventListener('click', turnClick, false);
 	}
-
 }
 
 function turnClick(square) {
 	turn(square.target.id, player)
+	computerLogic(square.target.id);
 }
 
 function turn(squareId, player) {
 	if (!isFilled(squareId)) {
 		document.getElementById(squareId).innerText = player;
 		currentGameBoard[squareId] = player;
-		endScreenMessage(currentGameBoard, winningCombos);
-		console.log('Filled');
+		endScreenMessage(currentGameBoard, winningCombos, player);
 	}
 	else {
 		console.log('Cannot click on same square twice');
 	}
+}
+
+function computerLogic(squareId) {
+	var square;
+	if (canWin()[0]) {
+		computerMove(canWin()[1])
+	}
+	/**
+	else if (canBlock(squareId)) {
+		computerMove(square)
+	}
+	else if (canFork(squareId)) {
+		computerMove(square)
+	}
+	else if (canBlockFork(squareId)) {
+		computerMove(square)
+	}
+	else if (pickCenter(squareId)) {
+		computerMove(square)
+	}
+	else if (pickOppositeCenter(squareId)) {
+		computerMove(square)
+	}
+	else if (pickEmptyCorner(squareId)) {
+		computerMove(square)
+	}
+	**/
+	else {
+		computerMove(4)
+	}
+}
+
+function canWin() {
+	for (var i = 0; i < winningCombos.length; i++) {
+		for (var j = 0; j < winningCombos[i].length; j++) {
+			var x = winningCombos[i][j];
+			var y = winningCombos[i][j+1];
+			var z = winningCombos[i][j+2];
+			if (currentGameBoard[x] == comp && currentGameBoard[y] == comp) {
+				if (!isFilled(currentGameBoard[z])) {
+					return [true, currentGameBoard[z]];
+				}
+			}
+			else if (currentGameBoard[x] == comp && currentGameBoard[z] == comp) {
+				if (!isFilled(currentGameBoard[y])) {
+					return [true, currentGameBoard[y]];
+				}				
+			}
+			else if (currentGameBoard[y] == comp && currentGameBoard[z] == comp) {
+				if (!isFilled(currentGameBoard[x])) {
+					return [true, currentGameBoard[x]];
+				}				
+			}			
+		}
+	}
+	return false;	
+}
+
+function computerMove(squareId) {
+	turn(squareId, comp);
 }
 
 function isFilled(squareId) {
@@ -51,19 +110,22 @@ function isFilled(squareId) {
 	}
 }
 
-function endScreenMessage(gameBoard, winningCombos) {
-	if (endGame(gameBoard, winningCombos)) {
-		if (win(gameBoard, winningCombos)) {
+function endScreenMessage(gameBoard, winningCombos, player) {
+	if (endGame(gameBoard, winningCombos, player)) {
+		if (win(gameBoard, winningCombos, player)[0] == true && win(gameBoard, winningCombos, player)[1] == 'O') {
 			document.getElementById("endGameDisplay").innerHTML = "You Win!";
 		}
+		else if (win(gameBoard, winningCombos, player)[0] == true && win(gameBoard, winningCombos, player)[1] == 'X') {
+			document.getElementById("endGameDisplay").innerHTML = "You Lose!";
+		}		
 		else {
 			document.getElementById("endGameDisplay").innerHTML = "Tie Game!";
 		}
 	}
 }
 
-function endGame(gameBoard, winningCombos) {
-	if (win(gameBoard, winningCombos) || tie(gameBoard)) {
+function endGame(gameBoard, winningCombos, player) {
+	if (win(gameBoard, winningCombos, player) || tie(gameBoard)) {
 		return true;
 	}
 	else {
@@ -71,16 +133,15 @@ function endGame(gameBoard, winningCombos) {
 	}
 }
 
-function win(gameBoard, winningCombos) {
+function win(gameBoard, winningCombos, player) {
 	for (var i = 0; i < winningCombos.length; i++) {
 		for (var j = 0; j < winningCombos[i].length; j++) {
 			var x = winningCombos[i][j];
 			var y = winningCombos[i][j+1];
 			var z = winningCombos[i][j+2];
 			if (gameBoard[x] == player && gameBoard[y] == player && gameBoard[z] == player) {
-				return true;
+				return [true, player];
 			}
-
 		}
 	}
 }
