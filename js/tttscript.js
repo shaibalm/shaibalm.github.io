@@ -44,10 +44,10 @@ function turn(squareId, player) {
 function computerLogic(squareId) {
 	var square;
 	if (canWin()[0]) {
-		computerMove(canWin()[1])
+		computerMove(canWin()[1]);
 	}
 	else if (canBlock()[0]) {
-		computerMove(canBlock()[1])
+		computerMove(canBlock()[1]);
 	}
 	/**
 	else if (canFork(squareId)) {
@@ -56,18 +56,82 @@ function computerLogic(squareId) {
 	else if (canBlockFork(squareId)) {
 		computerMove(square)
 	}
-	else if (pickCenter(squareId)) {
-		computerMove(square)
-	}
-	else if (pickOppositeCenter(squareId)) {
-		computerMove(square)
-	}
-	else if (pickEmptyCorner(squareId)) {
-		computerMove(square)
-	}
 	**/
+	else if (pickCenter()[0]) {
+		computerMove(pickCenter()[1]);
+	}
+	else if (pickOppositeCenter()[0]) {
+		computerMove(pickOppositeCenter()[1]);
+	}
+	else if (pickEmptyCorner()[0]) {
+		computerMove(pickEmptyCorner()[1]);
+	}
 	else {
-		computerMove(4)
+		if(!isFilled(1)) {
+			computerMove(1);
+		}
+		else if (!isFilled(3)) {
+			computerMove(3);
+		}
+		else if (!isFilled(5)) {
+			computerMove(5);
+		}
+		else {
+			computerMove(7);
+		}		
+	}
+}
+
+function pickEmptyCorner() {
+	if(!isFilled(0)) {
+		return [true, 0];
+	}
+	else if (!isFilled(2)) {
+		return [true, 2];
+	}
+	else if (!isFilled(6)) {
+		return [true, 6];
+	}
+	else if (!isFilled(8)) {
+		return [true, 8];
+	}
+	else {
+		return [false];
+	}
+}
+
+function pickOppositeCenter() {
+	if (currentGameBoard[0] == player) {
+		if(!isFilled(8)) {
+			return [true, 8];
+		}
+	}
+	else if (currentGameBoard[2] == player) {
+		if(!isFilled(6)) {
+			return [true, 6];
+		}
+	}
+	else if (currentGameBoard[6] == player) {
+		if(!isFilled(2)) {
+			return [true, 2];
+		}
+	}
+	else if (currentGameBoard[8] == player) {
+		if(!isFilled(0)) {
+			return [true, 0];
+		}
+	}
+	else {
+		return [false];
+	}
+}
+
+function pickCenter() {
+	if(!isFilled(4)) {
+		return [true,4];
+	}
+	else {
+		return [false];
 	}
 }
 
@@ -94,7 +158,7 @@ function canBlock() {
 			}			
 		}
 	}
-	return false;	
+	return [false];	
 }
 
 function canWin() {
@@ -120,7 +184,7 @@ function canWin() {
 			}			
 		}
 	}
-	return false;	
+	return [false];	
 }
 
 function computerMove(squareId) {
@@ -128,7 +192,7 @@ function computerMove(squareId) {
 }
 
 function isFilled(squareId) {
-	if (document.getElementById(squareId).innerText) {
+	if (currentGameBoard[squareId] == player || currentGameBoard[squareId == comp]) {
 		return true;
 	}
 	else {
