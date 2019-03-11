@@ -83,10 +83,10 @@ function tie(gameBoard) {
 	for (var i = 0; i < gameBoard.length; i++) {
 		if (gameBoard[i] != emptyBoard[i]) {
 			counter++;
-			console.log(gameBoard, counter)
-			if (counter = 9) {
-			}
 		}
+	}
+	if (counter == 9) {
+		return true;
 	}
 }
 
