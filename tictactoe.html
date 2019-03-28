@@ -1,18 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title>Shaibal Muhtadee - Tic Tac Toe</title>
-		<!-- Stylesheets -->
-		<link rel="stylesheet" href="css/tttstyle.css">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-	  	<!-- Favicons -->
-		<link rel="icon" type="image/png" href="images/favicon32.png" sizes="32x32"/>
-		<link rel="icon" type="image/png" href="images/favicon16.png" sizes="16x16"/> 
-	</head>
+		<meta charset="UTF-8">
+		<title>Tic Tac Toe</title>
 
-	<!-- LiveReload Script -->
-	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+		<!-- Favicons -->
+		<link rel="icon" type="image/png" href="images/favicon32.png" sizes="32x32"/>
+		<link rel="icon" type="image/png" href="images/favicon16.png" sizes="16x16"/> 	
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/tttstyle.css">
+	</head>
 
 	<body style="background-color: #3399ff;">
 		<!-- Title -->
@@ -23,23 +23,23 @@
 				</div>
 			</div>
 		</div>
+
 		<!-- Buttons -->
 		<div class="container text-center" style="margin-top:3vh; margin-bottom: 5vh;">
 			<div class="row">
-				<!-- End Game Message -->
-				<div class="col-6">
-					<div class="bg-warning" id="endGameDisplay">
-						Good Luck!
-					</div>
-				</div>
+				<div class="col-6">				
+					<div class="endgame">
+						<div class="text">Good Luck!</div>
+					</div>					
+				</div>				
 				<div class="col-6">
 					<button onClick="startGame()">New Game</button>
 				</div>
 			</div>
-		</div>
-		<!-- Game Board -->
+		</div>	
+
 		<div class="container">
-			<div class="row justify-content-center align-items-center">
+			<div class="row justify-content-center align-items-center">				
 				<div class="col-12">
 					<table>
 						<tr>
@@ -60,9 +60,8 @@
 					</table>
 				</div>
 			</div>
-		</div>
+		</div>		
 
-		<!-- Javascript -->
 		<script src="js/tttscript.js"></script>
 	</body>
 </html>

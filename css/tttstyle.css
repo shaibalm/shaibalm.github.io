@@ -1,39 +1,47 @@
 @import url("https://fonts.googleapis.com/css?family=Sniglet");
 
 * {
-	font-family: 'Sniglet', cursive;
+  font-family: 'Sniglet', cursive;
 }
 
 td {
-	border:  5px solid #333;
-	height:  20vh;
-	width:  20vh;
-	text-align:  center;
-	vertical-align:  middle;
-	font-size: 12vh;
-	cursor: pointer;
-	font: ;
+  border:  5px solid #333;
+  height:  20vh;
+  width:  20vh;
+  text-align:  center;
+  vertical-align:  middle;
+  font-size: 12vh;
+  cursor: pointer;
 }
 
 table {
-	border-collapse: collapse;
-	margin: auto; // center table
+  border-collapse: collapse;
+  margin: auto; // center table
 }
 
-/** Remove side and edge borders **/
 table tr:first-child td {
-	border-top: 0;
+  border-top: 0;
 }
 
 table tr:last-child td {
-	border-bottom: 0;
+  border-bottom: 0;
 }
 
 table tr td:first-child {
-	border-left: 0;
+  border-left: 0;
 }
 
 table tr td:last-child {
-	border-right: 0;
+  border-right: 0;
 }
+
+.endgame {
+  background-color: #999;
+  text-align: center;
+  border-radius: 5px;
+  color: black;
+  font-size: 18px;
+}
+
+
 
